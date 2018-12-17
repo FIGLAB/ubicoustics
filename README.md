@@ -27,7 +27,7 @@ Finally, install PyAudio for microphone access.
 ```bash
 (ubicoustics)$ pip install --global-option='build_ext' --global-option='-I/opt/local/include' --global-option='-L/opt/local/lib' pyaudio
 ```
-Keep in mind that `pyaudio` will require `portaudio` and `libasound` as non python dependencies. You'll have to install those separately for your OS.
+Keep in mind that `pyaudio` will require `portaudio` and `libasound` as non-python dependencies. You'll have to install those separately for your OS.
 
 `IMPORTANT:` When you install `pyaudio` via pip, you need to manually specify the `lib` and `include` directories via the `--global-option` flag. The example above assumes `portaudio` is installed under `/opt/local/include` and `/opt/local/lib`.
 
