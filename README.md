@@ -247,6 +247,15 @@ We've received several requests to document how we made Ubicoustics run on a Ras
 
 ![](https://cdn-shop.adafruit.com/970x728/1995-02.jpg)
 
+5. Alternative: Google AIY Kit
+
+You can also use Google's AIY Voice Kit as a starting point. It uses roughly the same configuration as above, except you'll need a 16GB Mini SD Card (the AIY Kit comes with an 8GB card).
+
+You can buy the Google AIY Voice Kit from [Target](https://www.target.com/p/-/A-53416295).
+
+![](https://aiyprojects.withgoogle.com/static/images/voice-v2/guide/voice-000.jpg)
+
+
 ## Software and Configuration
 
 
