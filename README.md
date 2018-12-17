@@ -31,7 +31,7 @@ Keep in mind that `pyaudio` will require `portaudio` and `libasound` as non pyth
 `IMPORTANT:` When you install `pyaudio` via pip, you need to manually specify the `lib` and `include` directories via the `--global-option` flag. The example above assumes `portaudio` is installed under `/opt/local/include` and `/opt/local/lib`.
 
 # Example Demos
-Once the dependencies above are installed, you can run a real-time demo based on an example pre-trained model.  That model is not part of this repo (due to filesize restrictions), but we provide a downloader script to simplify this process.
+Once the dependencies above are installed, try these four demos.  It requires our pre-trained model that is not part of this repo (due to filesize restrictions), but we provide a downloader script to simplify this process.
 
 ## Example #0: File Prediction (Simple)
 This simple demo reads an audio file, extracts features, and feeds them into the ML model for offline prediction. Once you've installed all dependencies, run `example_fileprediction_simple.py`:
