@@ -203,7 +203,7 @@ DBLEVEL_THRES = -40 # dB
 # Reference
 Gierad Laput, Karan Ahuja, Mayank Goel, Chris Harrison. 2018. Ubicoustics: Plug-and-Play Acoustic Activity Recognition. In Proceedings of the 31st Annual Symposium on User Interface Software and Technology (UIST '18). ACM, New York, NY, USA.
 
-[Download the paper here](http://gierad.com/projects/ubicoustics/ubicoustics.pdf).
+[Download the paper here](http://www.gierad.com/assets/ubicoustics/ubicoustics.pdf).
 
 BibTex Reference:
 ```
