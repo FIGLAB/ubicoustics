@@ -1,8 +1,9 @@
 # Research Code for Ubicoustics
 This is the research repository for Ubicoustics: Plug-and-Play Acoustic Activity Recognition (UIST 2018). It contains the base toolchain and demo for Ubicoustics.
 
-![](https://www.dropbox.com/s/jy7b8o8oanj1dgj/ubicoustics_a.gif?raw=1)
-![](https://www.dropbox.com/s/gusguxvhm2ao1o3/ubicoustics_b.gif?raw=1)
+![](https://github.com/FIGLAB/ubicoustics/blob/master/media/ubicoustics_a.gif?raw=true)
+![](https://github.com/FIGLAB/ubicoustics/blob/master/media/ubicoustics_b.gif?raw=true)
+
 # System Requirements
 The deep learning system is written in `python3`, specifically `tensorflow` and `keras`.
 
@@ -190,7 +191,7 @@ If you want to form an intuition on the system's behavior, we've created an exam
 
 Here's an example screenshot:
 
-![](https://www.dropbox.com/s/u978sxpkhshtl2c/example_liveprediction_detail_b.gif?raw=1)
+![](https://github.com/FIGLAB/ubicoustics/blob/master/media/example_liveprediction_detail.gif?raw=true)
 
 Prediction confidence values will be shown in real time. The system checks whether the highest confidence value exceeds a given threshold AND wether or the audio level is significant enough to warrant an event trigger (e.g., > -40dB). These parameters can be adjusted using the `PREDICTION_THRES` and `DBLEVEL_THRES` parameters:
 
