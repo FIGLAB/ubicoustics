@@ -223,3 +223,75 @@ BibTex Reference:
 
 # License
 Due to licensing restrictions, audio `wav` files and training code are only available by request (for now), and can only be used for research i.e., non-commercial purposes. Otherwise, Ubicoustics is freely available for non-commercial use, and may be redistributed under these conditions. Please see the license file for further details. For a commercial license, please contact Gierad Laput, Chris Harrison, and the CMU Technology Transfer Office (innovation@cmu.edu).
+
+# Appendix A: Raspberry Pi
+
+We've received several requests to document how we made Ubicoustics run on a Raspberry Pi. Here's what you'll need.
+
+## Hardware
+
+1. [Raspberry Pi 3 Model B+ - CortexA53 with 1GB](https://www.adafruit.com/product/3775)
+
+![](https://cdn-shop.adafruit.com/970x728/3775-04.jpg)
+
+2. [ReSpeaker 2-Mics Pi HAT (or better)](https://m.seeedstudio.com/productDetail/2874)
+
+![](https://statics3.seeedstudio.com/seeed/img/2017-06/HwIkCfuzRZ5EauL7Q4xmaj3D.jpg)
+
+3. [16GB Micro SD Card (Class 10)](https://www.amazon.com/SanDisk-COMINU024966-16GB-microSD-Card/dp/B004KSMXVM)
+
+![](https://isabela.iweb.co.uk/resize/ZT0xMjA5NjAwJmg9NTAwJnE9NzUmdD1vdXRib3VuZCZ1cmw9aHR0cHMlM0ElMkYlMkZzdGF0aWMubXltZW1vcnkuY28udWslMkZtZWRpYSUyRmNhdGFsb2clMkZwcm9kdWN0JTJGUyUyRmElMkZTYW5EaXNrLTM0NjQ0NEIuanBnJnc9NTAw/)
+
+4. [5V 2.5A Switching Power Supply (Highly Recommended)](https://www.adafruit.com/product/1995)
+
+![](https://cdn-shop.adafruit.com/970x728/1995-02.jpg)
+
+## Software and Configuration
+
+
+### Install Raspbian OS
+We recommend using Raspbian Lite as the operating system, but other flavors will do. There's an entire process that documents [how to flash your SD card with the latest Raspbian OS](https://www.raspberrypi.org/documentation/installation/installing-images/). If you're running macOS, we recommend this [documentation](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md).
+
+### Install Microphone Drivers
+
+Next, install the audio drivers for the ReSpeaker 2-Mics Pi HAT. Detailed documentation about the process [can be found here](http://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/).
+
+```bash
+git clone https://github.com/respeaker/seeed-voicecard.git
+cd seeed-voicecard
+sudo ./install.sh
+reboot
+```
+
+### Configure SWAP Space
+Once flashed, change your RPi configuration so that it uses extra memory SWAP space. You can do this by editing `/etc/dphys-swapfile`:
+
+```
+$ sudo nano /etc/dphys-swapfile
+```
+
+Uncomment the `CONF_SWAPSIZE`  and `CONF_MAXSWAP` parameters, and set them to a value that is roughly above 1G. In our case, we've set it to `4096`.
+
+```
+CONF_SWAPSIZE=4096
+CONF_MAXSWAP=4096
+```
+
+### Install `virtualenv`
+Once you've configured your SWAP space, we recommend creating a `virtualenv` environment. You can do this via:
+```bash
+$ sudo pip3 install virtualenv
+$ virtualenv ./ubicoustics -p python3
+$ source ubicoustics/bin/activate
+
+```
+
+Once `virtualenv` is installed, clone the repo and follow the instructions above to run Ubicoustics.
+
+```bash
+(ubicoustics)$ git clone https://github.com/FIGLAB/ubicoustics.git
+(ubicoustics)$ cd ubicoustics
+(ubicoustics)$ python example_liveprediction_simple.py
+```
+
+That's it! For questions, contact Gierad Laput (gierad.laput@cs.cmu.edu).
