@@ -304,7 +304,7 @@ Once `virtualenv` is installed, clone the repo and follow the instructions above
 (ubicoustics)$ python example_fileprediction_simple.py
 ```
 
-Once running, you'll get warning messages, specifically about exceeding memory. Don't worry about it; RPi will keep chugging along until the `tensorflow` completes loading model. Once done, your output should look something like this:
+Once running, you'll get warning messages, specifically about exceeding memory. Don't worry about it; RPi will keep chugging along until `tensorflow` completes loading model. Once done, your output should look something like this:
 
 ```
 Downloading example_model.hdf5 [867MB]:
@@ -336,10 +336,10 @@ Prediction: Knocking (0.99)
 Prediction: Knocking (0.91)
 ```
 
-Feel free to try the other examples. It takes a while for RPi to run the script, but once loaded, you'll have a prediction framerate of about 1Hz.
+Feel free to try the other examples. It takes a while for RPi to run the script, but once loaded, you'll have a prediction framerate of about 1Hz. If you've made it this far, congratulations! :)
 
 ```bash
 (ubicoustics)$ python example_liveprediction_simple.py
 ```
 
-That's it! For questions and feedback, contact Gierad Laput (gierad.laput@cs.cmu.edu).
+That's it! For help, questions, and general feedback, contact Gierad Laput (gierad.laput@cs.cmu.edu).
