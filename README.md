@@ -39,9 +39,7 @@ This simple demo reads an audio file, extracts features, and feeds them into the
 ```shell
 (ubicoustics)$ python example_fileprediction_simple.py
 ```
-The script will automatically download a model file called `example_model.hdf5` into the `/models` directory (if it doesn't exist). It's an 865.8MB file, so the download might take a while depending on your Internet connection.
-
-The script above will perform audio event detection on `example.wav`. The script will use your computer's speakers to playback the audio file while displaying its predictions. If everything runs correctly, you should get the following output:
+The script will automatically download a model file called `example_model.hdf5` into the `/models` directory (if it doesn't exist). It's an 865.8MB file, so the download might take a while depending on your Internet connection. The script above will perform audio event detection on `example.wav`.
 
 ```shell
 =====
@@ -97,8 +95,7 @@ p = pyaudio.PyAudio()
 stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, output=True, frames_per_buffer=CHUNK, stream_callback=audio_samples)
 
 ```
-
-And here's what that output looks like:
+The script will use your computer's speakers to playback the audio file while displaying its predictions. If everything runs correctly, you should get the following output:
 
 ```shell
 =====
