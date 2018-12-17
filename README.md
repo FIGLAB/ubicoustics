@@ -183,7 +183,7 @@ To manually grab a list of microphones for your system, just run `microphones.py
 
 ## Example #3: Live Prediction (Detail View)
 
-If you want to form an intuition on the system's behavior, this final example shows all the knobs you can turn, including the system's confidence values, along with audio levels and some parameters that you can tweak (e.g., thresholds) for real-time prediction.
+To form a better intuition on the system's behavior, this final example shows all the knobs you can turn, including the system's confidence values, along with audio levels and some parameters that you can tweak (e.g., thresholds) for real-time prediction.
 
 ```
 (ubicoustics)$ python example_liveprediction_detail.py
