@@ -34,12 +34,12 @@ Keep in mind that `pyaudio` will require `portaudio` and `libasound` as non pyth
 Once the dependencies above are installed, you can run a real-time demo based on an example pre-trained model.  That model is not part of this repo (due to filesize restrictions), but we provide a downloader script to simplify this process.
 
 ## Example #0: File Prediction (Simple)
-Next, you can run the demo that plays back an audio file via `example_fileprediction_simple.py`:
+This simple demo reads an audio file, extracts features, and feeds them into the ML model for offline prediction. Once you've installed all dependencies, run `example_fileprediction_simple.py`:
 
 ```shell
 (ubicoustics)$ python example_fileprediction_simple.py
 ```
-The script will automatically download a model file called `example_model.hdf5` into the `/models` directory. It's an 865.8MB file, so it might take a while depending on your Internet connection.
+The script will automatically download a model file called `example_model.hdf5` into the `/models` directory (if it doesn't exist). It's an 865.8MB file, so the download might take a while depending on your Internet connection.
 
 The script above will perform audio event detection on `example.wav`. The script will use your computer's speakers to playback the audio file while displaying its predictions. If everything runs correctly, you should get the following output:
 
