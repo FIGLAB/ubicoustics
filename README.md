@@ -129,7 +129,7 @@ Prediction: Knocking (0.99)
 
 ## Example #2: Live Prediction (Simple)
 
-This next example script will use your system microphone to perform live audio event predictions.
+This next example will use your system microphone to perform live audio event predictions.
 
 ```bash
 (ubicoustics)$ python example_liveprediction_simple.py
@@ -176,14 +176,14 @@ Prediction: Phone Ringing (0.86)
 
 This script makes predictions every second. This script should run on most platforms, including a `Raspberry Pi B+` (1GB of memory, 16GB disk space,  with 4GB set as SWAP). If you need help setting up your RPi, send an email to Gierad (gierad.laput@cs.cmu.edu).
 
-To manually grab a list of microphones for your system, use the following command:
+To manually grab a list of microphones for your system, just run `microphones.py`:
 ```bash
 (ubicoustics)$ python microphones.py
 ```
 
 ## Example #3: Live Prediction (Detail View)
 
-If you want to form an intuition on the system's behavior, we've created an example that exposes the system's confidence values, along with audio levels and some parameters that you can tweak (e.g., thresholds).
+If you want to form an intuition on the system's behavior, this final example shows all the knobs you can turn, including the system's confidence values, along with audio levels and some parameters that you can tweak (e.g., thresholds) for real-time prediction.
 
 ```
 (ubicoustics)$ python example_liveprediction_detail.py
