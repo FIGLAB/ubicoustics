@@ -89,7 +89,6 @@ wf = wave.open('example.wav', 'rb')
 
 # Callback
 def audio_samples(input, frame_count, time_info, status_flags):
-  global wf
   in_data = wf.readframes(frame_count)
   # Audio Processing Code here
   # ...
