@@ -218,4 +218,4 @@ BibTex Reference:
 ```
 
 # License
-Due to licensing restrictions, audio `wav` files and training code are only available by request (for now), and can only be used for research i.e., non-commercial purposes. Otherwise, Ubicoustics is freely available for non-commercial use, and may be redistributed under these conditions. Please see the license file for further details. For a commercial license, please contact Gierad Laput and Chris Harrison.
+Due to licensing restrictions, audio `wav` files and training code are only available by request (for now), and can only be used for research i.e., non-commercial purposes. Otherwise, Ubicoustics is freely available for non-commercial use, and may be redistributed under these conditions. Please see the license file for further details. For a commercial license, please contact Gierad Laput, Chris Harrison, and the CMU Technology Transfer Office (innovation@cmu.edu). 
