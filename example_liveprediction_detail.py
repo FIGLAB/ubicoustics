@@ -22,7 +22,6 @@ CHANNELS = 1
 RATE = 16000
 CHUNK = RATE
 MICROPHONES_DESCRIPTION = []
-MICROPHONE_INDEX = 0
 FPS = 60.0
 OUTPUT_LINES = 33
 
@@ -48,25 +47,29 @@ if (len(mics) == 0):
 #############
 # Read Command Line Args
 #############
-SELECTED_MIC = 0
+MICROPHONE_INDEX = indices[0]
 parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--mic", help="Select which microphone / input device to use")
 args = parser.parse_args()
 try:
     if args.mic:
-        SELECTED_MIC = int(args.mic)
-        print("User selected mic: %d" % SELECTED_MIC)
+        MICROPHONE_INDEX = int(args.mic)
+        print("User selected mic: %d" % MICROPHONE_INDEX)
     else:
-        mic_in = input("Select microphone [0]: ").strip()
-        if (mic_in==''):
-            SELECTED_MIC = 0
-        else:
-            SELECTED_MIC = int(mic_in)
+        mic_in = input("Select microphone [%d]: " % MICROPHONE_INDEX).strip()
+        if (mic_in!=''):
+            MICROPHONE_INDEX = int(mic_in)
 except:
     print("Invalid microphone")
     exit()
 
-print("Using mic: %s" % mics[SELECTED_MIC])
+# Find description that matches the mic index
+mic_desc = ""
+for k in range(len(indices)):
+    i = indices[k]
+    if (i==MICROPHONE_INDEX):
+        mic_desc = mics[k]
+print("Using mic: %s" % mic_desc)
 
 ###########################
 # Download model, if it doesn't exist
@@ -154,7 +157,7 @@ while(1):
     # Start Non-Blocking Stream
     ##############################
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("# Live Prediction Using Microphone: %s" % (mics[SELECTED_MIC]))
+    print("# Live Prediction Using Microphone: %s" % (mic_desc))
     stream.start_stream()
     while stream.is_active():
         with output(initial_len=OUTPUT_LINES, interval=0) as output_lines:

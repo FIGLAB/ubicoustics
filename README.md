@@ -16,6 +16,7 @@ source ubicoustics/bin/activate
 Once `virtualenv` is activated, install the following dependencies via `pip`
 
 ```bash
+(ubicoustics)$ git clone https://github.com/FIGLAB/ubicoustics.git
 (ubicoustics)$ pip install numpy==1.14.0
 (ubicoustics)$ pip install tensorflow
 (ubicoustics)$ pip install keras
@@ -226,7 +227,7 @@ Due to licensing restrictions, audio `wav` files and training code are only avai
 
 # Appendix A: Raspberry Pi
 
-We've received several requests to document how we made Ubicoustics run on a Raspberry Pi. Here's what you'll need.
+We've received several requests to document how we made Ubicoustics run on a Raspberry Pi. Be forewarned that we're pushing the limits of what an RPi can do, but that's part of the fun. If you're all for it, here's what you'll need:
 
 ## Hardware
 
@@ -291,7 +292,45 @@ Once `virtualenv` is installed, clone the repo and follow the instructions above
 ```bash
 (ubicoustics)$ git clone https://github.com/FIGLAB/ubicoustics.git
 (ubicoustics)$ cd ubicoustics
+(ubicoustics)$ python example_fileprediction_simple.py
+```
+
+Once running, you'll get warning messages, specifically about exceeding memory. Don't worry about it; RPi will keep chugging along until the `tensorflow` completes loading model. Once done, your output should look something like this:
+
+```
+Downloading example_model.hdf5 [867MB]:
+100% [......................................................................] 865808944 / 865808944
+Using deep learning model: models/example_model.hdf5
+2018-12-17 15:09:08.039745: W tensorflow/core/framework/allocator.cc:113] Allocation of 1024 exceeds 10% of system memory.
+2018-12-17 15:09:08.040125: W tensorflow/core/framework/allocator.cc:113] Allocation of 1024 exceeds 10% of system memory.
+2018-12-17 15:09:08.040456: W tensorflow/core/framework/allocator.cc:113] Allocation of 2048 exceeds 10% of system memory.
+2018-12-17 15:09:08.040689: W tensorflow/core/framework/allocator.cc:113] Allocation of 2048 exceeds 10% of system memory.
+2018-12-17 15:09:08.040904: W tensorflow/core/framework/allocator.cc:113] Allocation of 16384 exceeds 10% of system memory.
+Prediction: Coughing (1.00)
+Prediction: Coughing (1.00)
+Prediction: Coughing (1.00)
+Prediction: Coughing (1.00)
+Prediction: Coughing (1.00)
+Prediction: Toilet Flushing (1.00)
+Prediction: Toilet Flushing (1.00)
+Prediction: Toilet Flushing (1.00)
+Prediction: Water Running (1.00)
+Prediction: Water Running (1.00)
+Prediction: Water Running (1.00)
+Prediction: Water Running (1.00)
+Prediction: Water Running (1.00)
+Prediction: Water Running (1.00)
+Prediction: Water Running (1.00)
+Prediction: Water Running (1.00)
+Prediction: Knocking (1.00)
+Prediction: Knocking (0.99)
+Prediction: Knocking (0.91)
+```
+
+Feel free to try the other examples. It takes a while for RPi to run the script, but once loaded, you'll have a prediction framerate of about 1Hz.
+
+```bash
 (ubicoustics)$ python example_liveprediction_simple.py
 ```
 
-That's it! For questions, contact Gierad Laput (gierad.laput@cs.cmu.edu).
+That's it! For questions and feedback, contact Gierad Laput (gierad.laput@cs.cmu.edu).
