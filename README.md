@@ -261,17 +261,17 @@ The Google AIY Kit is the absolute bare-bones configuration that we've tested. A
 
 
 ### Install Raspbian OS
-We recommend using Raspbian Lite as the operating system, but other flavors will do. There's an entire process that documents [how to flash your SD card with the latest Raspbian OS](https://www.raspberrypi.org/documentation/installation/installing-images/). If you're running macOS, we recommend this [documentation](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md).
+We recommend using Raspbian Lite as the operating system, but other flavors will do. There's an entire process that documents [how to flash your SD card with the latest Raspbian OS](https://www.raspberrypi.org/documentation/installation/installing-images/). If you're running macOS, we recommend [going through this documentation](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md).
 
 ### Install Microphone Drivers
 
 Next, install the audio drivers for the ReSpeaker 2-Mics Pi HAT. Detailed documentation about the process [can be found here](http://wiki.seeedstudio.com/ReSpeaker_2_Mics_Pi_HAT/).
 
 ```bash
-git clone https://github.com/respeaker/seeed-voicecard.git
-cd seeed-voicecard
-sudo ./install.sh
-reboot
+$ git clone https://github.com/respeaker/seeed-voicecard.git
+$ cd seeed-voicecard
+$ sudo ./install.sh
+$ reboot
 ```
 
 ### Configure SWAP Space
