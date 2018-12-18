@@ -249,13 +249,13 @@ We've received several requests to document how we made Ubicoustics run on a Ras
 
 5. Alternative: Google AIY Kit
 
-You can also use Google's AIY Voice Kit as a starting point. It uses roughly the same configuration as above, except you'll need a 16GB Mini SD Card (the AIY Kit comes with an 8GB card).
+You can also use Google's AIY Voice Kit as a starting point. It uses roughly the same configuration as above, except you'll need a 16GB Mini SD Card (the AIY Kit comes with an 8GB card). It is markedly slower than an RPi B+.
 
 You can buy the Google AIY Voice Kit from [Target](https://www.target.com/p/-/A-53416295).
 
 ![](https://aiyprojects.withgoogle.com/static/images/voice-v2/guide/voice-000.jpg)
 
-The Google AIY Kit is the absolute bare-bones configuration that we've tested. It is slower than an RPi B+.
+The Google AIY Kit is the absolute bare-bones configuration that we've tested.
 
 ## Software and Configuration
 
