@@ -1,5 +1,5 @@
 # Research Code for Ubicoustics
-This is the research repository for Ubicoustics: Plug-and-Play Acoustic Activity Recognition (UIST 2018). It contains the base toolchain and demo for Ubicoustics.
+This is the research repository for Ubicoustics: Plug-and-Play Acoustic Activity Recognition (UIST 2018). It contains the base toolchain and demo for Ubicoustics. [More information about the research can be found here](http://www.gierad.com/projects/ubicoustics).
 
 ![](https://github.com/FIGLAB/ubicoustics/blob/master/media/ubicoustics_a.gif?raw=true)
 ![](https://github.com/FIGLAB/ubicoustics/blob/master/media/ubicoustics_b.gif?raw=true)
@@ -9,8 +9,8 @@ The deep learning system is written in `python3`, specifically `tensorflow` and 
 
 To begin, we recommend using `virtualenv` to run a self-contained setup.
 ```bash
-virtualenv ./ubicoustics -p python3
-source ubicoustics/bin/activate
+$ virtualenv ./ubicoustics -p python3
+$ source ubicoustics/bin/activate
 ```
 
 Once `virtualenv` is activated, install the following dependencies via `pip`
@@ -255,7 +255,7 @@ You can buy the Google AIY Voice Kit from [Target](https://www.target.com/p/-/A-
 
 ![](https://aiyprojects.withgoogle.com/static/images/voice-v2/guide/voice-000.jpg)
 
-The Google AIY Kit is the absolute bare-bones configuration that we've tested. Again, it is significantly slower than an RPi (but it has built-in Google integrations that you might find useful for other apps).
+The Google AIY Kit is the absolute bare-bones configuration that we've tested. Again, it is significantly slower than an RPi B+ (but it has built-in Google integrations that you might find useful for other apps).
 
 ## Software and Configuration
 
