@@ -195,7 +195,7 @@ Here's an example screenshot:
 
 ![](https://github.com/FIGLAB/ubicoustics/blob/master/media/example_liveprediction_detail.gif?raw=true)
 
-Prediction confidence values will be shown in real time. The system checks whether the highest confidence value exceeds a given threshold AND wether or the audio level is significant enough to warrant an event trigger (e.g., > -40dB). These parameters can be adjusted using the `PREDICTION_THRES` and `DBLEVEL_THRES` parameters:
+Prediction confidence values will be shown in real time. The system checks whether the highest confidence value exceeds a given threshold AND wether the audio levels are significant enough to warrant an event trigger (e.g., > -40dB). These parameters can be adjusted using the `PREDICTION_THRES` and `DBLEVEL_THRES` parameters:
 
 ```python
 PREDICTION_THRES = 0.8 # confidence
@@ -305,7 +305,7 @@ Once `virtualenv` is installed, clone the repo and follow the instructions above
 (ubicoustics)$ python example_fileprediction_simple.py
 ```
 
-Once running, you'll get warning messages, specifically about exceeding memory. Don't worry about it; RPi will keep chugging along until `tensorflow` completes loading model. Once done, your output should look something like this:
+Once running, you'll get warning messages, specifically about exceeding memory. Don't worry— RPi will keep chugging along until `tensorflow` completes loading the model. Once done, your output should look something like this:
 
 ```
 Downloading example_model.hdf5 [867MB]:
