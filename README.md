@@ -7,13 +7,13 @@ This is the research repository for Ubicoustics: Plug-and-Play Acoustic Activity
 # System Requirements
 The deep learning system is written in `python3`, specifically `tensorflow` and `keras`.
 
-To begin, we recommend using `virtualenv` to run a self-contained setup.
+To begin, we recommend using `virtualenv` to run a self-contained setup:
 ```bash
 $ virtualenv ./ubicoustics -p python3
 $ source ubicoustics/bin/activate
 ```
 
-Once `virtualenv` is activated, install the following dependencies via `pip`
+Once `virtualenv` is activated, install the following dependencies via `pip`:
 
 ```bash
 (ubicoustics)$ git clone https://github.com/FIGLAB/ubicoustics.git
@@ -23,7 +23,7 @@ Once `virtualenv` is activated, install the following dependencies via `pip`
 (ubicoustics)$ pip install wget
 ```
 
-Finally, install PyAudio for microphone access.
+Finally, install `pyaudio` for microphone access:
 ```bash
 (ubicoustics)$ pip install --global-option='build_ext' --global-option='-I/opt/local/include' --global-option='-L/opt/local/lib' pyaudio
 ```
@@ -76,7 +76,7 @@ Next, you can run the demo that plays back an audio file via `example_filepredic
 (ubicoustics)$ python example_fileprediction_playback.py
 ```
 
-It's similar to the previous example, but it uses `pyaudio`'s' non-blocking mechanism to process audio buffers at a given sample length. We insert `ubicoustics` predictions within that block:
+It's similar to the previous example, but it uses `pyaudio`'s non-blocking mechanism to process audio buffers at a given sample length. We insert `ubicoustics` predictions within that block:
 
 ```python
 # Audio FORMAT
