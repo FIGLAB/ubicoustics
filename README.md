@@ -255,6 +255,7 @@ You can buy the Google AIY Voice Kit from [Target](https://www.target.com/p/-/A-
 
 ![](https://aiyprojects.withgoogle.com/static/images/voice-v2/guide/voice-000.jpg)
 
+The Google AIY Kit is the absolute bare-bones configuration that we've tested. It is slower than an RPi B+.
 
 ## Software and Configuration
 
