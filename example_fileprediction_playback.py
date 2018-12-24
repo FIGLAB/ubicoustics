@@ -1,19 +1,14 @@
 from vggish_input import waveform_to_examples
 import numpy as np
-from scipy.io import wavfile
 from keras.models import load_model
 import vggish_params
 import pyaudio
 from pathlib import Path
 import time
 import tensorflow as tf
-import socket
-import os, sys, inspect
 import wave
-import argparse
 import wget
 import ubicoustics
-from collections import Counter
 
 # Variables
 FORMAT = pyaudio.paInt16
@@ -21,7 +16,6 @@ CHANNELS = 1
 RATE = 16000
 CHUNK = RATE
 float_dtype = '>f4'
-
 
 ###########################
 # Download model, if it doesn't exist
@@ -56,7 +50,6 @@ for k in range(len(context)):
     label[k] = context[k]
 
 # Setup Callback
-votes = []
 def audio_samples(input, frame_count, time_info, status_flags):
     global graph
     in_data = wf.readframes(frame_count)
@@ -74,7 +67,6 @@ def audio_samples(input, frame_count, time_info, status_flags):
             m = np.argmax(prediction[0])
             if (m < len(label)):
                 p = label[m]
-                votes.append(p)
                 print("Prediction: %s (%0.2f)" % (ubicoustics.to_human_labels[label[m]], prediction[0,m]))
                 n_items = prediction.shape[1]
             else:
@@ -82,7 +74,7 @@ def audio_samples(input, frame_count, time_info, status_flags):
 
     return (in_data, pyaudio.paContinue)
 
-# Start Reading from system's default audio input
+# Setup pyaudio waveread stream
 p = pyaudio.PyAudio()
 stream = p.open(format=FORMAT, channels=CHANNELS, rate=RATE, output=True, frames_per_buffer=CHUNK, stream_callback=audio_samples)
 

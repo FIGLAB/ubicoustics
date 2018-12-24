@@ -1,3 +1,4 @@
+# Helper functions, written by GL 12/2018
 import easing
 import sys
 import time

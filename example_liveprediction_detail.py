@@ -32,7 +32,7 @@ def download_model(url,output):
     return wget.download(url,output)
 
 ###########################
-# Checl Microphone
+# Check Microphone
 ###########################
 print("=====")
 print("1 / 2: Checking Microphones... ")
@@ -100,7 +100,7 @@ for k in range(len(context)):
 ##############################
 # Setup Audio Callback
 ##############################
-output_lines = []*32
+output_lines = []*OUTPUT_LINES
 audio_rms = 0
 candidate = ("-",0.0)
 
