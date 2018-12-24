@@ -162,7 +162,7 @@ while(1):
     while stream.is_active():
         with output(initial_len=OUTPUT_LINES, interval=0) as output_lines:
             while True:
-                time.sleep(1.0/FPS) # 30fps
+                time.sleep(1.0/FPS) # 60fps
                 for k in range(30):
                     interp = interpolators[k]
                     val = interp.update()
