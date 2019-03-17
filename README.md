@@ -9,7 +9,7 @@ The deep learning system is written in `python3`, specifically `tensorflow` and 
 
 To begin, we recommend using `virtualenv` to run a self-contained setup:
 ```bash
-$ virtualenv ./ubicoustics -p python3
+$ virtualenv ./ubicoustics -p python3.6
 $ source ubicoustics/bin/activate
 ```
 
@@ -17,10 +17,7 @@ Once `virtualenv` is activated, install the following dependencies via `pip`:
 
 ```bash
 (ubicoustics)$ git clone https://github.com/FIGLAB/ubicoustics.git
-(ubicoustics)$ pip install numpy==1.14.0
-(ubicoustics)$ pip install tensorflow
-(ubicoustics)$ pip install keras
-(ubicoustics)$ pip install wget
+(ubicoustics)$ pip install numpy==1.14.1 tensorflow==1.5.0 keras==2.1.6 wget
 ```
 
 Finally, install `pyaudio` for microphone access:
