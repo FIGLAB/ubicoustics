@@ -316,7 +316,7 @@ class output:
     def __init__(self, output_type="list", initial_len=1, interval=0, force_single_line=False, no_warning=False, sort_key=lambda x:x[0]):
         self.sort_key = sort_key
         self.no_warning = no_warning
-        no_warning and print("All reprint warning diabled.")
+        no_warning and print("All reprint warning disabled.")
 
         global is_atty
         # reprint does not work in the IDLE terminal, and any other environment that can't get terminal_size
@@ -346,7 +346,7 @@ class output:
         global is_atty
         if not is_atty:
             if not self.no_warning:
-                print("Not in terminal, reprint now using normal build-in print function.")
+                print("Not in terminal, reprint now using normal built-in print function.")
 
         return self.warped_obj
 

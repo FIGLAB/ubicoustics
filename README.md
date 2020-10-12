@@ -192,7 +192,7 @@ Here's an example screenshot:
 
 ![](https://github.com/FIGLAB/ubicoustics/blob/master/media/example_liveprediction_detail.gif?raw=true)
 
-Prediction confidence values will be shown in real time. The system checks whether the highest confidence value exceeds a given threshold AND wether the audio levels are significant enough to warrant an event trigger (e.g., > -40dB). These parameters can be adjusted using the `PREDICTION_THRES` and `DBLEVEL_THRES` parameters:
+Prediction confidence values will be shown in real time. The system checks whether the highest confidence value exceeds a given threshold AND whether the audio levels are significant enough to warrant an event trigger (e.g., > -40dB). These parameters can be adjusted using the `PREDICTION_THRES` and `DBLEVEL_THRES` parameters:
 
 ```python
 PREDICTION_THRES = 0.8 # confidence
