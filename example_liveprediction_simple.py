@@ -76,7 +76,6 @@ if (not ubicoustics_model.is_file()):
 ##############################
 print("Using deep learning model: %s" % (model_filename))
 model = load_model(model_filename)
-graph = tf.get_default_graph()
 context = ubicoustics.everything
 
 label = dict()
@@ -87,24 +86,22 @@ for k in range(len(context)):
 # Setup Audio Callback
 ##############################
 def audio_samples(in_data, frame_count, time_info, status_flags):
-    global graph
     np_wav = np.fromstring(in_data, dtype=np.int16) / 32768.0 # Convert to [-1.0, +1.0]
     x = waveform_to_examples(np_wav, RATE)
     predictions = []
-    with graph.as_default():
-        if x.shape[0] != 0:
-            x = x.reshape(len(x), 96, 64, 1)
-            pred = model.predict(x)
-            predictions.append(pred)
+    if x.shape[0] != 0:
+        x = x.reshape(len(x), 96, 64, 1)
+        pred = model.predict(x)
+        predictions.append(pred)
 
-        for prediction in predictions:
-            m = np.argmax(prediction[0])
-            if (m < len(label)):
-                p = label[m]
-                print("Prediction: %s (%0.2f)" % (ubicoustics.to_human_labels[label[m]], prediction[0,m]))
-                n_items = prediction.shape[1]
-            else:
-                print("KeyError: %s" % m)
+    for prediction in predictions:
+        m = np.argmax(prediction[0])
+        if (m < len(label)):
+            p = label[m]
+            print("Prediction: %s (%0.2f)" % (ubicoustics.to_human_labels[label[m]], prediction[0,m]))
+            n_items = prediction.shape[1]
+        else:
+            print("KeyError: %s" % m)
 
     return (in_data, pyaudio.paContinue)
 
