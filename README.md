@@ -7,26 +7,16 @@ This is the research repository for Ubicoustics: Plug-and-Play Acoustic Activity
 # System Requirements
 The deep learning system is written in `python3`, specifically `tensorflow` and `keras`.
 
-To begin, we recommend using `virtualenv` to run a self-contained setup:
+## Installation
 ```bash
-$ virtualenv ./ubicoustics -p python3.6
-$ source ubicoustics/bin/activate
+conda create -n "ubicoustics" python=3.8
+conda activate ubicoustics
+conda install numpy
+conda install scipy
+python -m pip install tensorflow
+python -m pip install wget
+conda install pyaudio
 ```
-
-Once `virtualenv` is activated, install the following dependencies via `pip`:
-
-```bash
-(ubicoustics)$ git clone https://github.com/FIGLAB/ubicoustics.git
-(ubicoustics)$ pip install numpy==1.14.1 tensorflow==1.5.0 keras==2.1.6 wget
-```
-
-Finally, install `pyaudio` for microphone access:
-```bash
-(ubicoustics)$ pip install --global-option='build_ext' --global-option='-I/opt/local/include' --global-option='-L/opt/local/lib' pyaudio
-```
-Keep in mind that `pyaudio` will require `portaudio` and `libasound` as non-python dependencies. You'll have to install those separately for your OS.
-
-`IMPORTANT:` When you install `pyaudio` via pip, you need to manually specify the `lib` and `include` directories via the `--global-option` flag. The example above assumes `portaudio` is installed under `/opt/local/include` and `/opt/local/lib`.
 
 # Example Demos
 Once the dependencies above are installed, try these four demos.  It requires our pre-trained model that is not part of this repo (due to filesize restrictions), but we provide a downloader script to simplify this process.

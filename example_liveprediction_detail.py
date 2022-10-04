@@ -90,7 +90,6 @@ if (not ubicoustics_model.is_file()):
 ##############################
 print("Using deep learning model: %s" % (model_filename))
 model = load_model(model_filename)
-graph = tf.get_default_graph()
 context = ubicoustics.everything
 
 label = dict()
@@ -111,7 +110,6 @@ for k in range(31):
 
 # Audio Input Callback
 def audio_samples(in_data, frame_count, time_info, status_flags):
-    global graph
     global output_lines
     global interpolators
     global audio_rms
@@ -127,20 +125,19 @@ def audio_samples(in_data, frame_count, time_info, status_flags):
     # Make Predictions
     x = waveform_to_examples(np_wav, RATE)
     predictions = []
-    with graph.as_default():
-        if x.shape[0] != 0:
-            x = x.reshape(len(x), 96, 64, 1)
-            pred = model.predict(x)
-            predictions.append(pred)
+    if x.shape[0] != 0:
+        x = x.reshape(len(x), 96, 64, 1)
+        pred = model.predict(x)
+        predictions.append(pred)
 
-        for prediction in predictions:
-            m = np.argmax(prediction[0])
-            candidate = (ubicoustics.to_human_labels[label[m]],prediction[0,m])
-            num_classes = len(prediction[0])
-            for k in range(num_classes):
-                interp = interpolators[k]
-                prev = interp.end
-                interp.animate(prev,prediction[0,k],1.0)
+    for prediction in predictions:
+        m = np.argmax(prediction[0])
+        candidate = (ubicoustics.to_human_labels[label[m]],prediction[0,m])
+        num_classes = len(prediction[0])
+        for k in range(num_classes):
+            interp = interpolators[k]
+            prev = interp.end
+            interp.animate(prev,prediction[0,k],1.0)
     return (in_data, pyaudio.paContinue)
 
 ##############################

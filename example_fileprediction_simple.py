@@ -34,7 +34,6 @@ selected_context = 'everything'
 print("Using deep learning model: %s" % (trained_model))
 model = load_model(trained_model)
 context = context_mapping[selected_context]
-graph = tf.get_default_graph()
 
 label = dict()
 for k in range(len(context)):
@@ -44,12 +43,10 @@ for k in range(len(context)):
 # Read Wavfile and Make Predictions
 ###########################
 x = wavfile_to_examples(selected_file)
-with graph.as_default():
-    
-    x = x.reshape(len(x), 96, 64, 1)
-    predictions = model.predict(x)
+x = x.reshape(len(x), 96, 64, 1)
+predictions = model.predict(x)
 
-    for k in range(len(predictions)):
-        prediction = predictions[k]
-        m = np.argmax(prediction)
-        print("Prediction: %s (%0.2f)" % (ubicoustics.to_human_labels[label[m]], prediction[m]))
+for k in range(len(predictions)):
+    prediction = predictions[k]
+    m = np.argmax(prediction)
+    print("Prediction: %s (%0.2f)" % (ubicoustics.to_human_labels[label[m]], prediction[m]))
